@@ -1,0 +1,36 @@
+.dayPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: space-evenly;
+}
+
+h1 {
+  margin: 0;
+  line-height: 1;
+  padding-top: 1rem;
+}
+
+.buttonStack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.basicButton {
+  padding: 3rem 4rem;
+  background-color: rebeccapurple;
+  border: 2px solid black;
+  border-radius: 16px;
+  font-size: 200%;
+  color: #fff;
+}
+
+.basicButton:hover {
+  transform: scale(1.1);
+  background-color: rgb(112, 74, 150);
+
+}
