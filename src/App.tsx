@@ -1,20 +1,21 @@
+import { createContext, useState } from "react";
 import "./App.css";
-import BasicButton from "./components/BasicButton";
+import ChooseDay from "./pages/ChooseDay";
+
+export const StoreContext = createContext({
+	store: {},
+	setStore: ({}) => {},
+});
 
 function App() {
-	const handleClick = () => {};
+	const [store, setStore] = useState({ currentDay: "" });
+
+	console.log(store);
 
 	return (
-		<>
-			<div className="dayPage">
-				<h1>Choose a Day</h1>
-				<div className="buttonStack">
-					<BasicButton onClick={handleClick} onKeyDown={handleClick} name="1" />
-					<BasicButton onClick={handleClick} onKeyDown={handleClick} name="2" />
-					<BasicButton onClick={handleClick} onKeyDown={handleClick} name="3" />
-				</div>
-			</div>
-		</>
+		<StoreContext.Provider value={{ store, setStore }}>
+			{store.currentDay === "" ? <ChooseDay /> : ""}
+		</StoreContext.Provider>
 	);
 }
 
